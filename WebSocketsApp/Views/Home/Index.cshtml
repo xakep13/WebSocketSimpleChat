@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+    <link type="text/css" rel="stylesheet" href="~/Content/ChatStyle.css" />
+    <link rel="stylesheet" href="~/Content/themes/base/all.css">
+
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="~/Scripts/chatScript.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/json2.min.js"></script>
+</head>
+<body>
+    <div id="header"> WebSocket Chat Room </div> 
+    <br /> <br /> <br /> 
+    <div id="divContainer">
+        <div id="divLogin" class="login">
+            <div>
+                Your Name:<br />
+                <input id="txtNickName" type="text" class="textBox" />
+            </div>
+            <div id="divButton">
+                <input id="btnStartChat" type="button" class="submitButton" value="Start Chat" />
+            </div>
+        </div>
+
+        <div id="divChat" class="chatRoom">
+            <div class="title">
+                Welcome to Chat Room [<span id='spanUser'></span>]
+
+            </div>
+            <div class="content">
+                <div id="divChatWindow" class="chatWindow">
+                </div>
+                <div id="divusers" class="users">
+                </div>
+            </div>
+            <div class="messageBar">
+                <input class="textbox" type="text" id="txtMessage"  />
+                <input id="btnSendMsg" type="button" value="Send" class="submitButton" />
+                <input id="btnCreategroup" type="button" value="CreateGroup" class="submitButton" />
+                <label id="isTyping" />
+            </div>
+        </div>
+            
+        <input id="hdId" type="hidden" />
+        <input id="hdUserName" type="hidden" />
+
+         <div class="modal" id="myModal">
+            <div class="modal-content">
+                <span class="close" id="closer">&times;</span>
+                <p><select id="select" multiple="multiple">
+                       <option disabled>Select people for chat</option>
+                 </select></p>
+                <input type="button" value="Create" id="createGroup" class="submitButton" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
